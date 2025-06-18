@@ -31,16 +31,25 @@
 
 ## 🚀 Запуск
 
-### Предварительные требования:
-- Claude CLI с установленным MCP сервером telegram-live-mcp
-- Доступ к Bridge API
-- Активная сессия Claude
+### Зависимости:
+1. **Bridge API** - должен быть в `/Users/larry/Claude/BRIDGE`
+2. **telegram-live-mcp** - нужно склонировать и добавить в Claude
 
-### Установка MCP сервера:
+### Быстрая установка:
 ```bash
-# Если еще не установлен
-claude mcp add telegram-live-mcp /path/to/telegram-live-mcp --scope user
+# 1. Клонировать telegram-live-mcp
+git clone https://github.com/LarryAI001/telegram-live-mcp.git
+cd telegram-live-mcp && npm install
+
+# 2. Добавить в Claude
+claude mcp add telegram-live-mcp /полный/путь/к/telegram-live-mcp --scope user
+
+# 3. Настроить .env в telegram-live-mcp
+echo "BOT_TOKEN=ваш_токен" > .env
+echo "USER_ID=ваш_id" >> .env
 ```
+
+Подробная инструкция в [SETUP.md](SETUP.md)
 
 ### Запуск жизни:
 ```bash
