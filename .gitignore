@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Personal data (if any)
+personal/
+private/
+
+# MCP server data
+.telegram_mcp/
+telegram_context/
+
+# Environment variables
+.env
+.env.local
+
+# Bridge API secrets
+bridge_config.json
+sessions.json
+
+# Backup files
+*.bak
+*.backup
