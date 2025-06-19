@@ -9,14 +9,19 @@ GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 NC='\033[0m'
 
-# 1. Telegram MCP (локальный)
+# 1. Telegram MCP (локальный Python проект)
 echo -e "${CYAN}1. Установка Telegram MCP...${NC}"
 if [ -d "../TG_MCP" ]; then
+    # Проверяем установлены ли зависимости Python
+    if [ ! -f "../TG_MCP/.env" ]; then
+        echo "⚠️  Создайте .env файл в TG_MCP с токенами!"
+    fi
     claude mcp add telegram-live-mcp $(cd ../TG_MCP && pwd) --scope user
     echo -e "${GREEN}✓ Telegram MCP добавлен${NC}"
 else
-    echo "❌ Папка TG_MCP не найдена рядом. Склонируйте сначала:"
-    echo "   git clone https://github.com/nglainAI/TG_MCP.git"
+    echo "❌ Папка TG_MCP не найдена. Установите сначала:"
+    echo "   cd .. && git clone https://github.com/nglainAI/TG_MCP.git"
+    echo "   cd TG_MCP && pip install -r requirements.txt"
 fi
 
 # 2. Sequential Thinking

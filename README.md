@@ -30,8 +30,9 @@ mkdir -p ~/AI && cd ~/AI
 git clone https://github.com/nglainAI/TG_MCP.git
 git clone https://github.com/nglainAI/live_ai.git
 
-# Настройте Telegram MCP
-cd TG_MCP && npm install
+# Настройте Telegram MCP (это Python проект!)
+cd TG_MCP
+pip install -r requirements.txt  # или pip3
 echo "BOT_TOKEN=ВАШ_ТОКЕН_ОТ_BOTFATHER" > .env
 echo "USER_ID=ВАШ_ID_ОТ_USERINFOBOT" >> .env
 
@@ -41,6 +42,9 @@ cd ../live_ai
 
 # Перезапустите Claude Code!
 ```
+
+⚠️ **Важно**: TG_MCP - это Python проект, используйте `pip install`, не npm!
+Если возникли проблемы, см. [INSTALL.md](INSTALL.md)
 
 ### 3️⃣ Запустите Клэр
 ```bash
