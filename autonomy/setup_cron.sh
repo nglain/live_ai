@@ -11,7 +11,7 @@ chmod +x life_daemon.sh
 LIFE_CRON="*/5 * * * * cd /Users/larry/Claude/TG_AGENT_PERSONALITY && ./life_daemon.sh"
 
 # Добавляем watchdog (каждые 10 минут)
-WATCHDOG_CRON="*/10 * * * * cd /Users/larry/Claude/TG_AGENT_PERSONALITY && python3 watchdog.py"
+WATCHDOG_CRON="*/10 * * * * cd /Users/larry/Claude/TG_AGENT_PERSONALITY && python3 scripts/watchdog.py"
 
 # Получаем текущий crontab
 CURRENT_CRON=$(crontab -l 2>/dev/null || echo "")

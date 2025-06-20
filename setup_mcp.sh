@@ -7,6 +7,7 @@ echo ""
 # Цвета
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
 NC='\033[0m'
 
 # 1. Telegram MCP (локальный Python проект)
@@ -39,7 +40,21 @@ echo -e "${CYAN}4. Установка Fetch...${NC}"
 claude mcp add fetch npx @kazuph/mcp-fetch --scope user
 echo -e "${GREEN}✓ Fetch добавлен${NC}"
 
+# 5. MCP_CORE (опционально - для глубинной памяти)
 echo ""
-echo -e "${GREEN}✅ Все MCP серверы установлены!${NC}"
+echo -e "${CYAN}5. MCP_CORE (опционально)...${NC}"
+if [ -d "../MCP_CORE" ]; then
+    echo -e "${YELLOW}Найден MCP_CORE! Для установки:${NC}"
+    echo "   cd ../MCP_CORE"
+    echo "   npm install && npm run build"
+    echo "   claude mcp add core-memory node $(cd ../MCP_CORE && pwd)/build/index.js --scope user"
+    echo -e "${YELLOW}Это даст доступ к глубинной памяти CLARITY${NC}"
+else
+    echo "MCP_CORE не найден (это нормально)"
+    echo "Клэр будет использовать локальную память Memory/"
+fi
+
+echo ""
+echo -e "${GREEN}✅ Основные MCP серверы установлены!${NC}"
 echo ""
 echo "⚠️  Теперь перезапустите Claude Code для применения изменений"

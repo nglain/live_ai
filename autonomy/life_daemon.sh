@@ -10,7 +10,7 @@ mkdir -p logs state
 echo "=== Life Daemon запущен: $(date) ===" >> "$LOG_FILE"
 
 # Сначала проверяем здоровье
-python3 health_monitor.py 2>&1 | tee -a "$LOG_FILE"
+python3 scripts/health_monitor.py 2>&1 | tee -a "$LOG_FILE"
 
 # Читаем статус здоровья
 HEALTH_STATUS=$(head -n1 state/claude_health.txt 2>/dev/null || echo "UNKNOWN")
@@ -26,7 +26,7 @@ if [ "$HEALTH_STATUS" = "HEALTHY" ] || [ "$HEALTH_STATUS" = "RESTARTED" ]; then
     fi
 else
     echo "Claude нездоров ($HEALTH_STATUS), используем orchestrator" >> "$LOG_FILE"
-    python3 life_orchestrator.py 2>&1 | tee -a "$LOG_FILE"
+    python3 scripts/life_orchestrator.py 2>&1 | tee -a "$LOG_FILE"
 fi
 
 echo "=== Life Daemon завершен: $(date) ===" >> "$LOG_FILE"
