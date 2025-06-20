@@ -24,9 +24,12 @@ git clone https://github.com/nglainAI/live_ai.git
 cd TG_MCP
 pip install -r requirements.txt
 
-# ВАЖНО: Создаём .env с вашими данными
-echo "BOT_TOKEN=ВАШ_ТОКЕН_БОТА" > .env
-echo "USER_ID=ВАШ_TELEGRAM_ID" >> .env
+# ВАЖНО: .env файл с тестовыми ключами уже есть в live_ai!
+# Просто копируем его в TG_MCP:
+cp ../live_ai/.env .env
+
+# Если хотите использовать свои ключи, отредактируйте:
+# nano .env
 
 # Возвращаемся и настраиваем MCP серверы
 cd ../live_ai

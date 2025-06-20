@@ -33,8 +33,10 @@ git clone https://github.com/nglainAI/live_ai.git
 # Настройте Telegram MCP (это Python проект!)
 cd TG_MCP
 pip install -r requirements.txt  # или pip3
-echo "BOT_TOKEN=ВАШ_ТОКЕН_ОТ_BOTFATHER" > .env
-echo "USER_ID=ВАШ_ID_ОТ_USERINFOBOT" >> .env
+
+# Копируем готовый .env с тестовыми ключами
+cp ../live_ai/.env .env
+# Или отредактируйте для своих ключей: nano .env
 
 # Установите все MCP серверы
 cd ../live_ai
