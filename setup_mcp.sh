@@ -40,18 +40,25 @@ echo -e "${CYAN}4. Установка Fetch...${NC}"
 claude mcp add fetch npx @kazuph/mcp-fetch --scope user
 echo -e "${GREEN}✓ Fetch добавлен${NC}"
 
-# 5. MCP_CORE (опционально - для глубинной памяти)
+# 5. Core Memory MCP (рекомендуется)
 echo ""
-echo -e "${CYAN}5. MCP_CORE (опционально)...${NC}"
+echo -e "${CYAN}5. Core Memory MCP (рекомендуется)...${NC}"
 if [ -d "../MCP_CORE" ]; then
     echo -e "${YELLOW}Найден MCP_CORE! Для установки:${NC}"
     echo "   cd ../MCP_CORE"
     echo "   npm install && npm run build"
     echo "   claude mcp add core-memory node $(cd ../MCP_CORE && pwd)/build/index.js --scope user"
-    echo -e "${YELLOW}Это даст доступ к глубинной памяти CLARITY${NC}"
+    echo -e "${YELLOW}Core Memory даст Клэр:${NC}"
+    echo "   - Структурированный поиск по памяти"
+    echo "   - Анализ паттернов и связей"
+    echo "   - Предсказание потребностей"
+    echo "   - Глубокую саморефлексию"
 else
-    echo "MCP_CORE не найден (это нормально)"
-    echo "Клэр будет использовать локальную память Memory/"
+    echo -e "${YELLOW}⚠️  Core Memory MCP не найден${NC}"
+    echo "   Рекомендуется установить для полных возможностей:"
+    echo "   git clone https://github.com/nglainAI/MCP_CORE.git"
+    echo ""
+    echo "   Без Core Memory Клэр будет использовать только локальную память"
 fi
 
 echo ""
