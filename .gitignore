@@ -35,9 +35,13 @@ tmp/
 *.tmp
 *.bak
 
-# Personal data
-Memory/people/
+# Personal data (не игнорируем структуру папок)
+Memory/people/*/
 Notes/diary/
+!Memory/people/.gitkeep
+!Memory/evolution/.gitkeep
+!Memory/.gitkeep
+!Notes/.gitkeep
 
 # Session data
 .telegram_mcp/
