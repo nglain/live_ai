@@ -1,6 +1,6 @@
-# Environment
-.env
-*.env
+# Environment (временно закомментировано для тестирования)
+# .env
+*.env.local
 
 # State files  
 state/
